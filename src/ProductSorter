@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class ProductSorter {
+
+    /**
+     * Sorts the product list by Product ID in ascending order.
+     *
+     * @param products List of Product objects to be sorted.
+     */
+    public static void sortByProductID(List<Product> products) {
+        products.sort(Comparator.comparingInt(p -> p.productID));
+    }
+}

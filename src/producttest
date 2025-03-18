@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class ProductSorterTest {
+    public static void main(String[] args) {
+        List<Product> products = new ArrayList<>();
+        
+        // Sample products with unordered IDs
+        products.add(new Product(3034, "Telephone", "Home Phone", 99.99, 25, "A", 8765));
+        products.add(new Product(1516, "Mouse", "Wireless Mouse", 49.4, 50, "B", 9794));
+        products.add(new Product(2591, "Camera", "Digital Camera", 499.9, 10, "B", 9512));
+        
+        System.out.println("Before Sorting:");
+        for (Product p : products) {
+            System.out.println(p.productID + " - " + p.name);
+        }
+
+        // **Test sorting function**
+        ProductSorter.sortByProductID(products);
+
+        System.out.println("\nAfter Sorting:");
+        for (Product p : products) {
+            System.out.println(p.productID + " - " + p.name);
+        }
+    }
+}
