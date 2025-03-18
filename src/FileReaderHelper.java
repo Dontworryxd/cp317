@@ -25,3 +25,24 @@ public class FileReaderHelper {
             int quantity=Integer.parseInt(data[4]);
             Supplier status =data[5]
             int Supplier ID=Integer.parseInt(data[6]);
+
+            productList.add(new Product(productID,description, price, quantity,status,supplierID));
+          }catch(IOException e){
+            System.out.println("Error: Unable to read product file." +e.getMessage());
+
+             System.out.println("Products successfully generated" +productList.size() + "products.")
+               return productList;}
+
+            
+  /**Read, parse, and store supplier list
+  * @param filename The name of the supplier file to read.
+  * @return A list of Supplier objects.
+  */
+  public static List<Supplier> readSuppliers (String filename) {
+    List<Supplier> supplierList= new ArrayList<>();
+
+  try( br BufferedReader = new BufferedReader(new FileReader(filename))) {
+            String line;
+
+    //TBA FINISH READING LINE BY LINE
+              
