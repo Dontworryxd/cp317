@@ -6,9 +6,13 @@ import java.util.List;
 public class ProductInventory {
     
     public static void main(String[] args) {
-        // Read products and suppliers from files
-        List<Product> products = FileReaderHelper.readProducts("productfile.txt");
-        List<Supplier> suppliers = FileReaderHelper.readSuppliers("supplierfile.txt");
+        // Create instances of the parser classes
+        ProductFileParser productParser = new ProductFileParser();
+        SupplierFileParser supplierParser = new SupplierFileParser();
+
+        // Read products and suppliers from files using the parser classes
+        List<Product> products = productParser.readFile("ProductFile.txt");
+        List<Supplier> suppliers = supplierParser.readFile("SupplierFile.txt");
 
         // Sort products by ProductID
         ProductSorter.sortByProductID(products);
