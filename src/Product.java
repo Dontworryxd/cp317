@@ -3,13 +3,13 @@ public class Product {
     private int productID;
     private String name;
     private String description;
-    private double price;
+    private String price;
     private int quantity;
     private String status;
     private int supplierID;
 
     // patrick - constructor for each item
-    public Product(int productID, String name, String description, double price, int quantity, String status, int supplierID) {
+    public Product(int productID, String name, String description, String price, int quantity, String status, int supplierID) {
         this.productID = productID;
         this.name = name;
         this.description = description;
@@ -23,7 +23,7 @@ public class Product {
     public int getProductID() {return productID;}
     public String getName() {return name;}
     public String getDescription() {return description;}
-    public double getPrice() {return price;}
+    public String getPrice() {return price;}
     public int getQuantity() {return quantity;}
     public String getStatus() {return status;}
     public int getSupplierID() {return supplierID;}
@@ -34,7 +34,7 @@ public class Product {
         return "Product ID: " + productID + 
                " Name: " + name + 
                " Description: " + description + 
-               " Price: $" + price + 
+               " Price: " + price + 
                " Quantity: " + quantity + 
                " Status: " + status + 
                " Supplier ID: " + supplierID;
