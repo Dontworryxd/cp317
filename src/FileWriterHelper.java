@@ -12,7 +12,7 @@ public class FileWriterHelper{
   */
 
   public static void writeInventory (String filename, List<Product> productList, List<Supplier> supplierList){
-    try (BufferedWriter bw= new BufferWriter (new FileWriter(filename))) {
+    try (BufferedWriter bw= new BufferedWriter (new FileWriter(filename))) {
 
       //create hashmap to allow searching feature in SupplierN Names by ID
       Map<Integer, String> supplierMap = supplierList.stream()
@@ -31,7 +31,7 @@ public class FileWriterHelper{
         String supplierName= supplierMap.getOrDefault(product.getSupplierID(), "Unknown Supplier");
 
         //format the output
-        String formattedLine=String.format("%-10d %-15s %-10d $%-9.2f %-10s %-15s",)
+        String formattedLine = String.format("%-10d %-15s %-10d $%-9.2f %-10s %-15s",
           product.getProductId(),
           product.getName(),
           product.getQuantity(),
