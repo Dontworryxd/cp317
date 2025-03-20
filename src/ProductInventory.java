@@ -4,22 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class ProductInventory {
-    
-    public static void main(String[] args) {
-        // Create instances of the parser classes
-        ProductFileParser productParser = new ProductFileParser();
-        SupplierFileParser supplierParser = new SupplierFileParser();
-
-        // Read products and suppliers from files using the parser classes
-        List<Product> products = productParser.readFile("data//ProductFile.txt");
-        List<Supplier> suppliers = supplierParser.readFile("data//SupplierFile.txt");
-
-        // Sort products by ProductID
-        ProductSorter.sortByProductID(products);
-
-        // Write to inventory.txt
-        writeInventoryToFile(products, suppliers);
-    }
 
     public static void writeInventoryToFile(List<Product> products, List<Supplier> suppliers) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("inventory.txt"))) {
