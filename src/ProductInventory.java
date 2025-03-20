@@ -11,8 +11,8 @@ public class ProductInventory {
         SupplierFileParser supplierParser = new SupplierFileParser();
 
         // Read products and suppliers from files using the parser classes
-        List<Product> products = productParser.readFile("ProductFile.txt");
-        List<Supplier> suppliers = supplierParser.readFile("SupplierFile.txt");
+        List<Product> products = productParser.readFile("data//ProductFile.txt");
+        List<Supplier> suppliers = supplierParser.readFile("data//SupplierFile.txt");
 
         // Sort products by ProductID
         ProductSorter.sortByProductID(products);
@@ -25,17 +25,20 @@ public class ProductInventory {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("inventory.txt"))) {
             // Header for the file
             writer.write("Product ID | Product Name | Quantity | Price | Status | Supplier Name\n");
-
+    
             // Iterate over products
             for (Product product : products) {
                 Supplier supplier = findSupplierByID(product.getSupplierID(), suppliers);
                 if (supplier != null) {
+                    // Remove dollar sign and convert price to double
+                    String priceString = product.getPrice().replace("$", "");
+                    double price = Double.parseDouble(priceString);
                     // Write product details along with the supplier name
                     writer.write(String.format("%d | %s | %d | $%.2f | %s | %s\n", 
                         product.getProductID(), 
                         product.getName(), 
                         product.getQuantity(), 
-                        product.getPrice(), 
+                        price, 
                         product.getStatus(), 
                         supplier.getName()));
                 }
@@ -45,7 +48,7 @@ public class ProductInventory {
             e.printStackTrace();
         }
     }
-
+    
     private static Supplier findSupplierByID(int supplierID, List<Supplier> suppliers) {
         for (Supplier supplier : suppliers) {
             if (supplier.getSupplierID() == supplierID) {
