@@ -34,7 +34,7 @@ public class ProductInventory {
                     String priceString = product.getPrice().replace("$", "");
                     double price = Double.parseDouble(priceString);
                     // Write product details along with the supplier name
-                    writer.write(String.format("%d | %s | %d | $%.2f | %s | %s\n", 
+                    writer.write(String.format("%-10s %-15s %-10s %-10s %-10s %-15s\n", 
                         product.getProductID(), 
                         product.getName(), 
                         product.getQuantity(), 
