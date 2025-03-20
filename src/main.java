@@ -1,28 +1,17 @@
-import java.util.List;
-
 public class main {
     public static void main(String[] args) {
-        String productFile = "data\\ProductFile.txt";
-        String supplierFile = "data\\SupplierFile.txt";
-
-        // Use polymorphism to read both files
+        // Create instances of the parser classes
         FileRead<Product> productParser = new ProductFileParser();
         FileRead<Supplier> supplierParser = new SupplierFileParser();
 
-        List<Product> products = productParser.readFile(productFile);
-        List<Supplier> suppliers = supplierParser.readFile(supplierFile);
+        // Read products and suppliers from files using the parser classes
+        List<Product> products = productParser.readFile("data//ProductFile.txt");
+        List<Supplier> suppliers = supplierParser.readFile("data//SupplierFile.txt");
 
-        // Print products
-        System.out.println("\nProducts:");
-        for (Product p : products) {
-            System.out.println(p);
-        }
+        // Sort products by ProductID
+        ProductSorter.sortByProductID(products);
 
-        // Print suppliers
-        System.out.println("\nSuppliers:");
-        for (Supplier s : suppliers) {
-            System.out.println(s);
-        }
-
+        // Write to inventory.txt
+        ProductInventory.writeInventoryToFile(products, suppliers);
     }
 }
