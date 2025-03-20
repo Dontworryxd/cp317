@@ -43,8 +43,9 @@ public class FileWriterHelper{
         bw.write(formattedLine);
         bw.newLine();
       }
-    System.out.println("File successfully created and written to:" +filename);
-  }catch(IOException e){
+    System.out.println("File successfully created and written to: " + filename);
+}
+    catch(IOException e) {
       System.out.println("Error writing to file: " + e.getMessage());
     }
   }
