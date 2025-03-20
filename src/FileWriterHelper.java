@@ -5,11 +5,11 @@ import java.util.stream.Collectors;
 public class FileWriterHelper{
 
   /** 
-  *parameters all to help write product inventory to a file
-  * @param filename The name of the output file (InventoryFile.txt).
-  * @param productList The sorted list of products.
-  * @param supplierList The list of suppliers.
-  */
+   * Writes product inventory to a file.
+   * @param filename The name of the output file.
+   * @param productList The sorted list of products.
+   * @param supplierList  list of suppliers.
+   */
 
   public static void writeInventory (String filename, List<Product> productList, List<Supplier> supplierList){
     try (BufferedWriter bw= new BufferedWriter (new FileWriter(filename))) {
