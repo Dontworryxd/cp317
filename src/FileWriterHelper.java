@@ -43,9 +43,8 @@ public class FileWriterHelper{
         bw.write(formattedLine);
         bw.newLine();
       }
-    System.out.println("File successfully created and written to: " + filename);
-}  // ✅ This correctly closes the try block
-catch (IOException e) {  // ✅ Now the catch block is correctly placed
+    System.out.println("File successfully created and written to: " + filename);}
+catch (IOException e) {  
     System.out.println("Error writing to file: " + e.getMessage());
 }
       
