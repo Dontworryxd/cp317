@@ -33,7 +33,7 @@ public class FileWriterHelper{
         //format the output
         String formattedLine=String.format("%-10d %-15s %-10d $%-9.2f %-10s %-15s",)
           product.getProductId(),
-          product.getname(),
+          product.getName(),
           product.getQuantity(),
           product.getPrice(),
           product.getStatus(),
@@ -44,7 +44,7 @@ public class FileWriterHelper{
         bw.newLine();
       }
     System.out.println("File successfully created and written to:" +filename);
-  }catch(IOException E){
+  }catch(IOException e){
       System.out.println("Error writing to file: " + e.getMessage());
     }
   }
