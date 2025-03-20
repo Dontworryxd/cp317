@@ -40,7 +40,7 @@ public class FileWriterHelper{
           supplierName);
 
         //writing formatted line to file
-        bw.write(formattedLine):
+        bw.write(formattedLine);
         bw.newLine();
       }
     System.out.println("File successfully created and written to:" +filename);
