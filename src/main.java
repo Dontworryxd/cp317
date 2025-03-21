@@ -1,7 +1,7 @@
 import java.util.List;
 
-/*public class Main {
-    public static void main(String[] args) {
+public class Main {
+/*public static void main(String[] args) {
         // patrick showing usage of how to create supply objects the same will go for product
         Supplier supply = new Supplier(1234, "microsoft", "3852 althorpe circle", "6479372135", "ikoiwoh");
         String productFile = "data//ProductFile.txt";
