@@ -1,0 +1,8 @@
+1234, TV, Smart TV, $499.99, 10, A, 9512
+2234, Printer, Laser Printer, $199.99, 5, B, 8642
+3234, Monitor, LED Monitor, $149.99, 20, A, 3579
+4234, Laptop, Gaming Laptop, $1299.99, 3, A, 8692
+5234, Mouse, Wireless Mouse, $29.99, 50, B, 6954
+6234, Keyboard, Mechanical Keyboard, $89.99, 25, C, 7807
+7234, Webcam, HD Webcam, $59.99, 30, A, 8672
+8234, Router, Wi-Fi Router, $79.99, 15, B, 4567

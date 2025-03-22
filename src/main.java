@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Main {
+public class main {
 /*public static void main(String[] args) {
         // patrick showing usage of how to create supply objects the same will go for product
         Supplier supply = new Supplier(1234, "microsoft", "3852 althorpe circle", "6479372135", "ikoiwoh");
@@ -29,19 +29,19 @@ public class Main {
     }
 */
 
-public static void main(String[] args) {
-    // Create instances of the parser classes
-    FileRead<Product> productParser = new ProductFileParser();
-    FileRead<Supplier> supplierParser = new SupplierFileParser();
+    public static void main(String[] args) {
+        // Create instances of the parser classes
+        FileRead<Product> productParser = new ProductFileParser();
+        FileRead<Supplier> supplierParser = new SupplierFileParser();
 
-    // Read products and suppliers from files using the parser classes
-    List<Product> products = productParser.readFile("data//ProductFile.txt");
-    List<Supplier> suppliers = supplierParser.readFile("data//SupplierFile.txt");
+        // Read products and suppliers from files using the parser classes
+        List<Product> products = productParser.readFile("data//ProductFile.txt");
+        List<Supplier> suppliers = supplierParser.readFile("data//SupplierFile.txt");
 
-    // Sort products by ProductID
-    ProductSorter.sortByProductID(products);
+        // Sort products by ProductID
+        ProductSorter.sortByProductID(products);
 
-    // Write to inventory.txt
-    ProductInventory.writeInventoryToFile(products, suppliers);
-}
+        // Write to inventory.txt
+        ProductInventory.writeInventoryToFile(products, suppliers);
+    }
 }

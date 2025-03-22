@@ -1,0 +1,8 @@
+1234, TV, Smart TV, $499.99, 10, A, 9512
+2234, Printer, Laser Printer, 199.99, 5, B, 8642               # Missing dollar sign
+3234, Monitor, LED Monitor, $149.99, -5, A, 3579               # Negative quantity
+4234, Laptop, Gaming Laptop, $1299.99, 3, A, notanid           # Invalid supplier ID
+5234, Mouse, Wireless M@use, $29.99, 50, B, 6954               # Special character in description
+, , , , , ,                                                   # Completely empty entry
+6234, Keyboard, Mechanical Keyboard, $89.99, 25, C             # Missing supplier ID
+7234, Webcam, HD Webcam, $59.99, 30, A, 8672
